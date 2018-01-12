@@ -9,7 +9,6 @@
 
 <script>
 import AppNavbar from './containers/app_navbar'
-import AppFooter from './containers/app_footer'
 import Notification from './containers/app_notification'
 
 export default {
@@ -18,14 +17,13 @@ export default {
   // Top-Level Application Components
   components: {
     AppNavbar,
-    Notification,
-    AppFooter
+    Notification
   },
 
   // Top-Level page Meta
   metaInfo: {
     title: 'Loading...', // set a title
-    titleTemplate: 'AstroKey - %s', // title is now "AstroKey - Loading..."
+    titleTemplate: 'NYS Health - %s', // title is now "NYS Health - Loading..."
     htmlAttrs: {
       lang: 'en'
     }
