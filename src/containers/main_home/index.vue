@@ -1,6 +1,6 @@
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid pt-4">
     <i class="fa fa-spin fa-spinner" v-if="fetching"/>
     <LayoutView :collection="collection" v-if="!fetching"/>
   </div>
