@@ -1,7 +1,8 @@
 
 <template>
   <div class="container-fluid">
-    <LayoutView :collection="collection" />
+    <i class="fa fa-spin fa-spinner" v-if="fetching"/>
+    <LayoutView :collection="collection" v-if="!fetching"/>
   </div>
 </template>
 
@@ -24,6 +25,9 @@ export default {
   computed: {
     collection () {
       return this.$store.getters['record/collection']
+    },
+    fetching () {
+      return this.$store.getters['record/fetching']
     }
   }
 }

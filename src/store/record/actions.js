@@ -1,4 +1,3 @@
-import Factory from './factory'
 import _ from 'lodash'
 const API_ROOT = 'https://health.data.ny.gov/resource/5ib6-49en.json'
 
@@ -26,11 +25,9 @@ const actions = {
       commit('fetching', false)
 
       // Sets state.collection
-      commit('sync', json)
+      commit('collection', json)
     }) // TODO - CATCH statement
-  },
-
-  create: ({ commit }, attributes) => Factory.create({ commit }, attributes)
+  }
 }
 
 // // // //

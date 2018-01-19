@@ -1,5 +1,5 @@
 
-// Project Module State
+// Record Module State
 const state = {
   collection: [],
   current: {},
