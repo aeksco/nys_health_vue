@@ -1,7 +1,7 @@
 // import createPersistedState from 'vuex-persistedstate'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import post from './post'
+import record from './record'
 import notification from './notification'
 
 // Vuex Initialization
@@ -12,7 +12,7 @@ Vue.use(Vuex)
 // and getters.
 export default new Vuex.Store({
   modules: {
-    post,
+    record,
     notification
   }
   // plugins: [createPersistedState()]

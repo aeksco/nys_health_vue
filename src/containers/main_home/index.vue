@@ -1,9 +1,8 @@
 
 <template>
-    <div class="container-fluid">
-      <LayoutView/>
-    </div>
-
+  <div class="container-fluid">
+    <LayoutView :collection="collection" />
+  </div>
 </template>
 
 <!-- // // // //  -->
@@ -18,6 +17,14 @@ export default {
   },
   metaInfo: {
     title: 'Main - Home'
+  },
+  created () {
+    this.$store.dispatch('record/fetchCollection')
+  },
+  computed: {
+    collection () {
+      return this.$store.getters['record/collection']
+    }
   }
 }
 </script>
