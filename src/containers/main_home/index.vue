@@ -19,9 +19,6 @@ export default {
   metaInfo: {
     title: 'Main - Home'
   },
-  created () {
-    this.$store.dispatch('record/fetchCollection')
-  },
   computed: {
     collection () {
       return this.$store.getters['record/collection']

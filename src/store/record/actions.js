@@ -6,9 +6,9 @@ const API_ROOT = 'https://health.data.ny.gov/resource/5ib6-49en.json'
 // actions
 // functions that causes side effects and can involve asynchronous operations.
 const actions = {
-  fetchCollection: ({ commit }) => {
+  fetchCollection: ({ commit }, { city }) => {
     commit('fetching', true)
-
+    console.log(city)
     // Fetches Collection from the server
     fetch(API_ROOT)
     // Parses response into JSON

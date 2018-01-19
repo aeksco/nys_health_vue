@@ -3,23 +3,27 @@
     <div class="row">
       <div class="col-lg-12">
         City Selector
-        <v-select :options="cities"/>
+        <select class='form-control' v-model="selected" @change="updateCity()">
+          <option v-for="city in cities" :key="city">{{ city }}</option>
+        </select>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import vSelect from 'vue-select'
-
 export default {
-  props: ['collection'],
-  components: {
-    vSelect
+  data () {
+    return { selected: 'TROY' }
   },
   computed: {
     cities () {
       return this.$store.getters['record/cities']
+    }
+  },
+  methods: {
+    updateCity () {
+      this.$store.dispatch('record/fetchCollection', { city: this.selected })
     }
   }
 }
