@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     onRecordClick () {
+      this.$store.dispatch('record/fetchInspections', { nys_health_operation_id: this.record.nys_health_operation_id })
       return this.$store.commit('record/selectedRecord', { record: this.record })
     }
   }

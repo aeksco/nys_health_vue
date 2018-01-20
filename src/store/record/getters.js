@@ -10,7 +10,7 @@ const getters = {
   selectedRecord: state => {
     return state.selectedRecord
   },
-  selectedRecordInspections: state => {
+  selectedInspections: state => {
     return state.selectedInspections
   },
   fetching: state => {
