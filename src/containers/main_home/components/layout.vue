@@ -1,24 +1,32 @@
 <template>
-  <div class="row align-items-center">
-    <div class="col-lg-12">
-
-      <div class="row my-4">
-        <div class="col-lg-12">
-          <ul class="list-group">
-            <li class="list-group-item" v-for="rec in collection" :key="rec.id">
-              {{ rec.facility || rec.permitted_corp_name }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
+  <div class="row">
+    <div class="col-lg-4">
+      <CitySelector/>
+      <br/>
+      <ResultFilter/>
+      <br/>
+      <ResultList/>
     </div>
+    <div class="col-lg-8">
+      <ResultDetail/>
+    </div>
+
   </div>
 </template>
 
 <script>
+import CitySelector from './cityselector'
+import ResultFilter from './resultfilter'
+import ResultList from './resultlist'
+import ResultDetail from './resultdetail'
 
 export default {
-  props: ['collection']
+  props: ['collection'],
+  components: {
+    CitySelector,
+    ResultFilter,
+    ResultList,
+    ResultDetail
+  }
 }
 </script>

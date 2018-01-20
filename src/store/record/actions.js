@@ -1,4 +1,3 @@
-import Factory from './factory'
 import _ from 'lodash'
 const API_ROOT = 'https://health.data.ny.gov/resource/5ib6-49en.json'
 
@@ -7,9 +6,9 @@ const API_ROOT = 'https://health.data.ny.gov/resource/5ib6-49en.json'
 // actions
 // functions that causes side effects and can involve asynchronous operations.
 const actions = {
-  fetchCollection: ({ commit }) => {
+  fetchCollection: ({ commit }, { city }) => {
     commit('fetching', true)
-
+    console.log(city)
     // Fetches Collection from the server
     fetch(API_ROOT)
     // Parses response into JSON
@@ -26,11 +25,9 @@ const actions = {
       commit('fetching', false)
 
       // Sets state.collection
-      commit('sync', json)
+      commit('collection', json)
     }) // TODO - CATCH statement
-  },
-
-  create: ({ commit }, attributes) => Factory.create({ commit }, attributes)
+  }
 }
 
 // // // //
