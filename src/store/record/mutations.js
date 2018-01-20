@@ -7,8 +7,18 @@ const mutations = {
   collection (state, collection) {
     state.collection = collection
   },
-  current (state, attributes) {
-    state.current = attributes
+  selectedRecord (state, record) {
+    if (state.selectedRecord) {
+      state.selectedRecord.selected = false
+    }
+    record.selected = true
+    state.selectedRecord = record
+  },
+  fetchingInspections (state, isFetching) {
+    state.fetchingInspections = isFetching
+  },
+  selectedInspections (state, inspections) {
+    state.selectedInspections = inspections
   }
 }
 

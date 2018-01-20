@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     updateCity () {
-      this.$store.dispatch('record/fetchCollection', { city: this.selected })
+      this.$store.dispatch('record/fetchCollection', { facility_city: this.selected })
     }
   }
 }

@@ -2,8 +2,10 @@
 // Record Module State
 const state = {
   collection: [],
-  current: {},
-  fetching: false
+  selectedRecord: {},
+  selectedInspections: {},
+  fetching: false,
+  fetchingInspections: false
 }
 
 export default state

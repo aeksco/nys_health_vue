@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-lg-12">
         Result Detail
+        <pre class='bg-dark text-light'>{{ selectedRecord }}</pre>
       </div>
     </div>
   </div>
@@ -11,6 +12,13 @@
 <script>
 
 export default {
-  props: ['collection']
+  computed: {
+    selectedRecord () {
+      return this.$store.getters['record/selectedRecord']
+    },
+    selectedInspections () {
+      return this.$store.getters['record/selectedInspections']
+    }
+  }
 }
 </script>

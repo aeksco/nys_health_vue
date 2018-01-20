@@ -7,11 +7,17 @@ const getters = {
   collection: state => {
     return state.collection
   },
-  current: state => {
-    return state.current
+  selectedRecord: state => {
+    return state.selectedRecord
+  },
+  selectedRecordInspections: state => {
+    return state.selectedInspections
   },
   fetching: state => {
     return state.fetching
+  },
+  fetchingInspections: state => {
+    return state.fetchingInspections
   },
   cities: state => {
     return CITIES

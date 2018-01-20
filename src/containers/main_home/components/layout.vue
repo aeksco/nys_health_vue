@@ -5,7 +5,7 @@
       <br/>
       <ResultFilter/>
       <br/>
-      <ResultList/>
+      <ResultList :collection="collection" />
     </div>
     <div class="col-lg-8">
       <ResultDetail/>
