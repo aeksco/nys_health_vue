@@ -40,7 +40,6 @@ const actions = {
     .then((json) => {
       // Sort & group inspections
       json = _.chain(json)
-      .sortBy(['date_of_inspection'], ['desc'])
       .groupBy('date_of_inspection')
       .map((inspections, date) => {
         return {
@@ -51,6 +50,10 @@ const actions = {
           items: inspections
         }
       })
+      .sortBy(['date'], ['asc'])
+      // .sortBy((e) => {
+        // return new Date(e.date_of_inspection)
+      // })
       .value()
 
       // State.fetching = false
